@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(10, 69, 136);
+}
+header{
+    background-color: blanchedalmond;
+}
+h1{
+    text-align: center;
+}
+nav {
+    display: inline;
+    text-align: center;
+    margin: 10px;
+}
+li{
+    background-color: blanchedalmond;
+    display: inline;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+.controller {
+    text-align: center;
+    margin: 20%;
+    padding: 10px;
+    
+    
+}
+.pbutton {
+   height: max-content;
+   
+}
+
+#score{
+    background-color: blanchedalmond;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+}
+.screen {
+    background-color: black;
+    border: double;
+    border-radius: 10px;
+    text-align: center;
+    height: 250px;
+    color: blanchedalmond;
+    margin-left: 20%;
+    margin-right: 20%;
+}
