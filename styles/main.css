@@ -61,7 +61,7 @@ li{
 
 .screen {
     background-color: black;
-    border: double;
+    border: ridge;
     border-radius: 10px;
     text-align: center;
     height: 350px;
@@ -70,6 +70,15 @@ li{
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 30px;
+    border-width: 10px;
+    /* border-color: chocolate; */
+    padding: 10px;
+}
+.innerscreen {
+    margin: 10% 0% 0% 0%;
+    background-color: gray;
+    font-size: 40px;
+    max-height: 100px;
 }
 
 
@@ -103,5 +112,5 @@ li{
     border-radius: 100px;
     padding: 10px;
     border-width: 5px;
-    margin-left:100px;
+    margin-left:50%;
 }
