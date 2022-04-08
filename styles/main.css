@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: rgb(98, 68, 2);
+    background-color: rgb(110, 59, 4);
 }
 header{
     background-color: blanchedalmond;
@@ -13,7 +13,7 @@ header{
 h1{
     text-align: center;
     font-size: 45px;
-    color: rgb(98, 68, 2);
+    color: rgb(110, 59, 4);
 }
 nav {
     display: inline;
@@ -60,7 +60,7 @@ li{
 }
 
 .screen {
-    background-color: black;
+    background-color: rgb(45, 45, 45);
     border: ridge;
     border-radius: 10px;
     text-align: center;
@@ -76,9 +76,10 @@ li{
 }
 .innerscreen {
     margin: 10% 0% 0% 0%;
-    background-color: gray;
     font-size: 40px;
     max-height: 100px;
+    color: blanchedalmond;
+    background-color: gray;
 }
 
 
@@ -113,4 +114,17 @@ li{
     padding: 10px;
     border-width: 5px;
     margin-left:50%;
+}
+
+.yellow{
+    background-color: yellow;
+}
+.blue {
+    background-color: blue;
+}
+.red {
+    background-color: red;
+}
+.green {
+    background-color: green;
 }
