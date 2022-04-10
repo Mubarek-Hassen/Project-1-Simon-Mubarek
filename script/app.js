@@ -8,8 +8,8 @@ const screen = document.querySelector('.screen')
 const score = document.querySelector('#score')
 
 const simon = ['red','green','blue','yellow'];
+let sequence = []
 const player = [];
-let say = screen.style.backgroundColor
 
 let gamePlay = false;
 const random = Math.floor(Math.random() * simon.length)
@@ -20,12 +20,14 @@ start.addEventListener('click', ()=>{
     if (start.innerHTML === 'Start'){
     console.log('I start')
     screen.innerHTML ='<h2>Simon Says...</h2>'
-    innerScreen.innerHTML = 'Color'
     start.innerHTML = 'Reset'
     gamePlay = true;
+    color();
+    
 } else if (start.innerHTML === 'Reset'){
     start.innerHTML = 'Start'
     gamePlay = false
+    clearInterval(interval)
 
 }
 }
@@ -34,12 +36,14 @@ start.addEventListener('click', ()=>{
 
 
 
-// Test
+
 btnYellow.addEventListener('click',()=>{
     if(gamePlay === true){
     console.log('yellow is pressed')
     screen.classList.add('yellow')
-    // innerScreen.innerHTML = '<h2>Yellow</h2>'
+    player.push('yellow')
+    console.log(player)
+   
     setTimeout(()=>{
         screen.classList.remove('yellow')
     },500)
@@ -50,6 +54,8 @@ btnBlue.addEventListener('click', ()=>{
     console.log('blue is pressed')
     screen.classList.add(simon[2])
     innerScreen.innerHTML = 'Blue'
+    player.push('blue')
+    console.log(player)
     setTimeout(()=>{
         screen.classList.remove(simon[2])
         innerScreen.innerHTML = 'Color'
@@ -60,6 +66,8 @@ btnGreen.addEventListener('click', ()=>{
     console.log('green is pressed')
     screen.classList.add('green')
     innerScreen.innerHTML = 'Green'
+    player.push('green')
+    console.log(player)
     setTimeout(()=>{
         screen.classList.remove('green')
         innerScreen.innerHTML = 'Color'
@@ -70,6 +78,8 @@ btnRed.addEventListener('click', ()=>{
     console.log('red is pressed')
     screen.classList.add('red')
     innerScreen.innerHTML = 'Red'
+    player.push('red')
+    console.log(player)
     setTimeout(()=>{
         screen.classList.remove('red')
         innerScreen.innerHTML = 'Color'
@@ -78,16 +88,31 @@ btnRed.addEventListener('click', ()=>{
 
 
 
+function color(){
+        let i = 0;
+        if (gamePlay === true){
+           interval = setInterval(()=>{
+            sequence.push(simon[i])
+            screen.style.backgroundColor = simon[i]
+            i++
+                console.log(sequence)
+           },2000)
+           
+
+        } else if(gamePlay === false){
+            clearInterval(interval)
+        }
+    }
 
 
 
 
-// function times(func,numTimes){
-//     for (let i=0; i<numTimes; i++){
-//         func();
-//     }
-// }
-// times();
+
+
+
+
+
+
 
 
 
