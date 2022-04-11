@@ -6,13 +6,13 @@ const start = document.querySelector('#on')
 const innerScreen = document.querySelector('.innerscreen')
 const screen = document.querySelector('.screen')
 const score = document.querySelector('#score')
-
 const simon = ['red','green','blue','yellow'];
+// console.log(simon)
 let sequence = [];
 let player = [];
 
+let random = simon[parseInt(Math.random() * simon.length)]
 let gamePlay = false;
-const random = simon[Math.floor(Math.random() * simon.length)]
 
 let level = 5
 let winDM = 'Well Done! Can You Do It Again?'
@@ -29,11 +29,16 @@ start.addEventListener('click', ()=>{
     start.innerHTML = 'Reset'
     gamePlay = true;
     color()
+    compareTwoArrays(player,sequence)
+
 } else if (start.innerHTML === 'Reset'){
     start.innerHTML = 'Start'
     gamePlay = false
     clearInterval(interval)
     screen.style.backgroundColor = 'grey'
+    player = []
+    sequence = []
+    simon.push(random)
 
 }
 }
@@ -94,82 +99,79 @@ btnRed.addEventListener('click', ()=>{
 
 
 
-// function color(){
-//         let i = 0;
-//         if (gamePlay === true){
-
-//             interval = setInterval(()=>{
-//                if (i<simon.length){
-//             sequence.push(simon[i])
-//             screen.style.backgroundColor = simon[i]
-//             i++
-            
-//                 console.log(sequence)
-//            }},1500)
-
-           
-//         //    compare(player,sequence)
-           
-//         } else if(gamePlay === false){
-//             clearInterval(interval)
-//         }
-    
-//     }
-
 
 function color(){
     let i = 0;
+    
     if (gamePlay === true){
 
         interval = setInterval(()=>{
            if (i<simon.length){
-        sequence.push(simon[i])
-        screen.style.backgroundColor = simon[i]
+        let random = simon[parseInt(Math.random() * simon.length)]
+        sequence.push(random)
+        screen.style.backgroundColor = random
         i++
         
             console.log(sequence)
-       }},1500) 
+       }},1000) 
+       setTimeout(()=>{
+           
+           if (compareTwoArrays(player,sequence)===true){
+               console.log(winDM)
+           }else {
+               console.log(loseDM)
+           }
+       },10000)
        
     } else if(gamePlay === false){
         clearInterval(interval)
+       
+        
+    }
     }
 
-}
-
-
-// function repeat(func,count){
-//     if (count < 15){
-//         setInterval(()=>{
-//             count++
-//             color()
-//         }, 10000)
-        
-//     }
-// }
 
 
 
-// function next(){
-//     if (player === sequence)
-// }
+
+
+
+
 
 
 
 function getrand (){
+    for (let i=0; i<simon.length; i++){
+    if (gamePlay === true){
     const simon = [
         'red',
         'green',
         'blue',
         'yellow'];
-        return simon[parseInt(Math.random() * simon.length)]
+        let random = simon[parseInt(Math.random() * simon.length)]
+        screen.style.backgroundColor = random[i]
+        i++
+        return random;}}
 }
 
 
 
-
-
-
-
+function compareTwoArrays(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+       return false
+    } else {
+       for (let i = 0; i < arr1.length; i++){
+          if (arr1[i] !== arr2[i]){
+             return false
+          } else {
+             continue
+          }
+       }
+    }
+    return true
+ }
+ 
+ compareTwoArrays(player,sequence);
 
 
 

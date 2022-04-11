@@ -92,6 +92,7 @@ li{
     border: solid;
     border-radius: 50px;
     border-color: black;
+    cursor: pointer;
 }
 #btnRed {
     background-color: red;
@@ -114,6 +115,7 @@ li{
     padding: 10px;
     border-width: 5px;
     margin-left:50%;
+    cursor: pointer;
 }
 
 .yellow{
