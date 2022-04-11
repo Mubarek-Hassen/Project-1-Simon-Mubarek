@@ -29,13 +29,14 @@ start.addEventListener('click', ()=>{
     start.innerHTML = 'Reset'
     gamePlay = true;
     color()
-    compareTwoArrays(player,sequence)
+    // compareTwoArrays(player,sequence)
 
 } else if (start.innerHTML === 'Reset'){
     start.innerHTML = 'Start'
     gamePlay = false
     clearInterval(interval)
     screen.style.backgroundColor = 'grey'
+    screen.innerHTML ='<h2>Simon Says...</h2>'
     player = []
     sequence = []
     simon.push(random)
@@ -102,7 +103,9 @@ btnRed.addEventListener('click', ()=>{
 
 function color(){
     let i = 0;
-    
+    let simon2 = 1000;
+    let colorCount = 4;
+    let simonTime = simon2 * colorCount
     if (gamePlay === true){
 
         interval = setInterval(()=>{
@@ -110,49 +113,32 @@ function color(){
         let random = simon[parseInt(Math.random() * simon.length)]
         sequence.push(random)
         screen.style.backgroundColor = random
+        screen.innerHTML = `<h1>${random}</h1>`
         i++
-        
+        colorCount++
+        console.log(colorCount)
             console.log(sequence)
-       }},1000) 
-       setTimeout(()=>{
+       }},simon2) 
+       if (player.length === sequence.length){
+        if (gamePlay === true){
+            turn = setTimeout(()=>{
            
            if (compareTwoArrays(player,sequence)===true){
                console.log(winDM)
            }else {
                console.log(loseDM)
            }
-       },10000)
-       
+       }, 10000 + simonTime)
+    }}
     } else if(gamePlay === false){
         clearInterval(interval)
+        clearTimeout(turn)
+        screen.style.backgroundColor = 'grey'
        
         
     }
     }
 
-
-
-
-
-
-
-
-
-
-
-function getrand (){
-    for (let i=0; i<simon.length; i++){
-    if (gamePlay === true){
-    const simon = [
-        'red',
-        'green',
-        'blue',
-        'yellow'];
-        let random = simon[parseInt(Math.random() * simon.length)]
-        screen.style.backgroundColor = random[i]
-        i++
-        return random;}}
-}
 
 
 
