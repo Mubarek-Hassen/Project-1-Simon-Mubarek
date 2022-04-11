@@ -60,7 +60,7 @@ li{
 }
 
 .screen {
-    background-color: rgb(45, 45, 45);
+    background-color: grey;
     border: ridge;
     border-radius: 10px;
     text-align: center;
@@ -127,4 +127,8 @@ li{
 }
 .green {
     background-color: green;
+}
+
+.rgb{
+    background-color: rgb(45, 45, 45);
 }

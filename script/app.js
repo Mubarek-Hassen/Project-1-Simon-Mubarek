@@ -8,11 +8,17 @@ const screen = document.querySelector('.screen')
 const score = document.querySelector('#score')
 
 const simon = ['red','green','blue','yellow'];
-let sequence = []
-const player = [];
+let sequence = [];
+let player = [];
 
 let gamePlay = false;
-const random = Math.floor(Math.random() * simon.length)
+const random = simon[Math.floor(Math.random() * simon.length)]
+
+let level = 5
+let winDM = 'Well Done! Can You Do It Again?'
+let loseDM = 'Bruh!'
+
+
 
 
 
@@ -22,12 +28,12 @@ start.addEventListener('click', ()=>{
     screen.innerHTML ='<h2>Simon Says...</h2>'
     start.innerHTML = 'Reset'
     gamePlay = true;
-    color();
-    
+    color()
 } else if (start.innerHTML === 'Reset'){
     start.innerHTML = 'Start'
     gamePlay = false
     clearInterval(interval)
+    screen.style.backgroundColor = 'grey'
 
 }
 }
@@ -88,24 +94,75 @@ btnRed.addEventListener('click', ()=>{
 
 
 
-function color(){
-        let i = 0;
-        if (gamePlay === true){
-           interval = setInterval(()=>{
-            sequence.push(simon[i])
-            screen.style.backgroundColor = simon[i]
-            i++
-                console.log(sequence)
-           },2000)
-           
+// function color(){
+//         let i = 0;
+//         if (gamePlay === true){
 
-        } else if(gamePlay === false){
-            clearInterval(interval)
-        }
+//             interval = setInterval(()=>{
+//                if (i<simon.length){
+//             sequence.push(simon[i])
+//             screen.style.backgroundColor = simon[i]
+//             i++
+            
+//                 console.log(sequence)
+//            }},1500)
+
+           
+//         //    compare(player,sequence)
+           
+//         } else if(gamePlay === false){
+//             clearInterval(interval)
+//         }
+    
+//     }
+
+
+function color(){
+    let i = 0;
+    if (gamePlay === true){
+
+        interval = setInterval(()=>{
+           if (i<simon.length){
+        sequence.push(simon[i])
+        screen.style.backgroundColor = simon[i]
+        i++
+        
+            console.log(sequence)
+       }},1500) 
+       
+    } else if(gamePlay === false){
+        clearInterval(interval)
     }
 
+}
 
 
+// function repeat(func,count){
+//     if (count < 15){
+//         setInterval(()=>{
+//             count++
+//             color()
+//         }, 10000)
+        
+//     }
+// }
+
+
+
+// function next(){
+//     if (player === sequence)
+// }
+
+
+
+function getrand (){
+    const simon = [
+        'red',
+        'green',
+        'blue',
+        'yellow'];
+        return simon[parseInt(Math.random() * simon.length)]
+}
 
 
 
