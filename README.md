@@ -3,6 +3,14 @@
 ! [Simon Wireframe image] (https://user-images.githubusercontent.com/102003916/162020344-c31f5087-87b2-4b51-8605-57bc2e1ace48.png)
 
 ## Simon The Game
+   Simon is a game that is played with colors being displayed and a player returning the same pattern of colors displayed earlier.
+
+## Tech Used :
+- Chrome
+- VS Code
+- HTML/CSS
+
+
 1. first, build a playground for the player and Simon.
    - a. create a div that holds all the elemnts to the game.
     - b. create/append elements to the browser to create the playground.
@@ -28,3 +36,13 @@
 
 7. if player keeps on clicking the right pattern, speed/ time interval of simon printing the colors will increase, making it more difficult each round to follow along Simon.
    - a. each round will become more challenging than the previous.
+
+
+##
+
+   ## [Screenshot of the game](https://user-images.githubusercontent.com/102003916/163089084-da2ced13-0ecb-477d-9592-c649b0af06bc.png)
+
+
+
+   ## [Link to the game](https://mubarek-hassen.github.io/Project-1-Simon-Mubarek/)
+
