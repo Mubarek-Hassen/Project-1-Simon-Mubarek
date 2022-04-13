@@ -1,8 +1,4 @@
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
+
 *,
 *::after,
 *::before {
@@ -13,8 +9,6 @@
 
 
 body{
-    /* background-color: rgb(110, 59, 4); */
-    /* background-color: rgb(164,44,246); */
     background-image: url(https://thumbs.gfycat.com/AridKaleidoscopicBlacklemur-size_restricted.gif);
     background-repeat: no-repeat;
     background-size: cover;
@@ -86,12 +80,10 @@ li{
     text-align: center;
     height: 350px;
     color: blanchedalmond;
-    /* max-width: 600px; */
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 30px;
     border-width: 10px;
-    /* border-color: chocolate; */
     padding: 10px;
 }
 .innerscreen {
