@@ -40,9 +40,10 @@
 
 ##
 
-   ## [Screenshot of the game](https://user-images.githubusercontent.com/102003916/163089084-da2ced13-0ecb-477d-9592-c649b0af06bc.png)
-
+   ## Screenshot of the game
+![Screen Shot 2022-06-21 at 10 04 20 AM](https://user-images.githubusercontent.com/102003916/174819611-f1c4a41b-5b0c-4aaa-8d41-bea2e7cfaef5.png)
 
 
    ## [Link to the game](https://mubarek-hassen.github.io/Project-1-Simon-Mubarek/)
+
 
